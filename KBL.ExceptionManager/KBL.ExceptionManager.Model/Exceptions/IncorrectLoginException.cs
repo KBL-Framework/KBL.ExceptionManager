@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class IncorrectLoginException<T> : BaseException<T>
+    public class IncorrectLoginException : BaseCustomException
     {
         #region Fields
         protected static new string _message = "Inccorect login - bad username or password. Or both.";

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class NoUserRoleException<T> : BaseException<T>
+    public class NoUserRoleException : BaseCustomException
     {
         #region Fields
         protected static new string _message = "No user role added for user.";

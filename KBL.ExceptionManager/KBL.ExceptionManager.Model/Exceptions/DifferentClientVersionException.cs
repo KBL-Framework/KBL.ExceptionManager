@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class DifferentClientVersionException : AbstractCustomException
+    public class DifferentClientVersionException : BaseCustomException
     {
         #region Fields
         protected static new string _message = "Your application has too old version. You have to update the client application to the latest version.";
@@ -53,6 +54,10 @@ namespace KBL.ExceptionManager.Model.Exceptions
         #endregion
 
         #region Public methods
+        public override string GetJson()
+        {
+            return JsonConvert.SerializeObject(new { error = UserFriendlyMessage, actualVersion = ActualVersion, downloadUrl = DownloadUrl });
+        }
         #endregion
 
         #region Private methods

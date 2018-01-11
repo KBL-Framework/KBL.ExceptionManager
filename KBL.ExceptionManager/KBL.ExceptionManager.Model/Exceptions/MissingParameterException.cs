@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class MissingParameterException<T> : BaseException<T>
+    public class MissingParameterException : BaseCustomException
     {
         #region Fields
         protected static new string _message = "Missing parameter for request!";

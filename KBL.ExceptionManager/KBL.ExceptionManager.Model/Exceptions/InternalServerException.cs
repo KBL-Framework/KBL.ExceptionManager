@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class InternalServerException<T> : BaseException<T>
+    public class InternalServerException : BaseCustomException
     {
         #region Fields
         protected static new string _message = "Exception in application. More info in inner exception.";

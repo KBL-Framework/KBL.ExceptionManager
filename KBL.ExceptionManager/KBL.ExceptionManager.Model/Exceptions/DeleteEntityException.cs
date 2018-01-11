@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class DeleteEntityException<T> : BaseException<T>
+    public class DeleteEntityException<T> : BaseGenericCustomException<T>
     {
         #region Fields
         #endregion

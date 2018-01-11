@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class BadTimeOnDeviceException<T> : BaseException<T>
+    public class BadTimeOnDeviceException : BaseCustomException
     {
         #region Fields
         protected static new string _message = string.Format("Device date and time is different from server date and time.");

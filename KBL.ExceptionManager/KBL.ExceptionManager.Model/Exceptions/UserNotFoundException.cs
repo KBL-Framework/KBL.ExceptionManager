@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class UserNotFoundException<T> : BaseException<T>
+    public class UserNotFoundException : BaseCustomException
     {
         #region Fields
         protected string _username;
