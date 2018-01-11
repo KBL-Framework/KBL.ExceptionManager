@@ -24,20 +24,18 @@ namespace KBL.ExceptionManager.Model.Exceptions
         #region Cstors
         public BaseCustomException() : base(_message)
         { }
-        public BaseCustomException(string reason) //: base(reason)
+        public BaseCustomException(string reason) : base($"Message: {_message} \n Reason: {reason}")
         {
-            throw new NotImplementedException();
         }
 
-        public BaseCustomException(string message, string reason)
+        public BaseCustomException(string message, string reason) : base($"Message: {_message} \n CustomMessage: {message} \n Reason: {reason}")
         {
-            throw new NotImplementedException();
         }
 
         public BaseCustomException(Exception innerException) : base(_message, innerException)
         { }
 
-        public BaseCustomException(string message, Exception innerException) : base(message, innerException)
+        public BaseCustomException(string message, Exception innerException) : base($"Message: {_message} \n CustomMessage: {message}", innerException)
         { }
         #endregion
 

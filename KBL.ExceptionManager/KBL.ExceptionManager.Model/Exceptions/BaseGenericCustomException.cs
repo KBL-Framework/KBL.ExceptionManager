@@ -21,22 +21,20 @@ namespace KBL.ExceptionManager.Model.Exceptions
         #endregion
 
         #region Cstors
-        public BaseGenericCustomException() : base(_message)
+        public BaseGenericCustomException() : base($"EntityType: {typeof(T).Name} \n Message: {_message}")
         { }
-        public BaseGenericCustomException(string reason) //: base(reason)
+        public BaseGenericCustomException(string reason) : base($"EntityType: {typeof(T).Name} \n Message: {_message} \n Reason: {reason}")
         {
-            throw new NotImplementedException();
         }
 
-        public BaseGenericCustomException(string message, string reason)
+        public BaseGenericCustomException(string message, string reason) : base($"EntityType: {typeof(T).Name} \n Message: {_message} \n CustomMessage: {message} \n Reason: {reason}")
         {
-            throw new NotImplementedException();
         }
 
         public BaseGenericCustomException(Exception innerException) : base(_message, innerException)
         { }
 
-        public BaseGenericCustomException(string message, Exception innerException) : base(message, innerException)
+        public BaseGenericCustomException(string message, Exception innerException) : base($"EntityType: {typeof(T).Name} \n Message: {_message} \n CustomMessage: {message}", innerException)
         { }
         #endregion
 
