@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KBL.ExceptionManager.Interfaces", "KBL.ExceptionManager.Interfaces\KBL.ExceptionManager.Interfaces.csproj", "{155196ED-6B44-453B-9798-C629C20C0252}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KBL.ExceptionManager.Interfaces", "KBL.ExceptionManager.Interfaces\KBL.ExceptionManager.Interfaces.csproj", "{155196ED-6B44-453B-9798-C629C20C0252}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KBL.ExceptionManager.Model", "KBL.ExceptionManager.Model\KBL.ExceptionManager.Model.csproj", "{8939AB3F-3DFE-4DA4-8738-45095B5799E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KBL.ExceptionManager.Model", "KBL.ExceptionManager.Model\KBL.ExceptionManager.Model.csproj", "{8939AB3F-3DFE-4DA4-8738-45095B5799E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KBL.ExceptionManager.Base", "KBL.ExceptionManager.Base\KBL.ExceptionManager.Base.csproj", "{96690918-76B3-4C81-AA00-3EE72F18A46D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KBL.ExceptionManager.Base", "KBL.ExceptionManager.Base\KBL.ExceptionManager.Base.csproj", "{96690918-76B3-4C81-AA00-3EE72F18A46D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
