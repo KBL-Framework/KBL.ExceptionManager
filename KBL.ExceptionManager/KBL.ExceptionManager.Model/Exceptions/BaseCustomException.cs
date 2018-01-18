@@ -1,4 +1,6 @@
 ﻿using KBL.ExceptionManager.Interfaces.Model;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -7,7 +9,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public abstract class BaseException<T> : Exception, ICustomException<T>
+    public abstract class BaseCustomException : Exception, ICustomException
     {
         #region Fields
         protected static string _message = "";
@@ -20,22 +22,20 @@ namespace KBL.ExceptionManager.Model.Exceptions
         #endregion
 
         #region Cstors
-        public BaseException() : base(_message)
+        public BaseCustomException() : base(_message)
         { }
-        public BaseException(string reason) //: base(reason)
+        public BaseCustomException(string reason) : base($"Message: {_message} \n Reason: {reason}")
         {
-            throw new NotImplementedException();
         }
 
-        public BaseException(string message, string reason)
+        public BaseCustomException(string message, string reason) : base($"Message: {_message} \n CustomMessage: {message} \n Reason: {reason}")
         {
-            throw new NotImplementedException();
         }
 
-        public BaseException(Exception innerException) : base(_message, innerException)
+        public BaseCustomException(Exception innerException) : base(_message, innerException)
         { }
 
-        public BaseException(string message, Exception innerException) : base(message, innerException)
+        public BaseCustomException(string message, Exception innerException) : base($"Message: {_message} \n CustomMessage: {message}", innerException)
         { }
         #endregion
 
@@ -44,10 +44,14 @@ namespace KBL.ExceptionManager.Model.Exceptions
         {
             return new HttpResponseMessage(this.HttpStatusCode) { ReasonPhrase = this.UserFriendlyMessage };
         }
+
+        public virtual string GetJson()
+        {
+            return JsonConvert.SerializeObject(new { error = UserFriendlyMessage });
+        }
         #endregion
 
         #region Private methods
         #endregion
-
     }
 }

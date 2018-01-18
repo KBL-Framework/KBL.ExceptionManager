@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackageId>KBL.ExceptionManager</PackageId>
+    <Version>0.9.3-beta-1</Version>
+    <Authors>Jakub Luňáček</Authors>
+    <Company>KBL.codes</Company>
+    <Product>KBL.ExceptionManager</Product>
+    <Copyright>Copyright 2018 (c) KBL.codes. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/KBL-Framework/KBL.ExceptionManager</PackageProjectUrl>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/KBL-Framework/KBL.ExceptionManager</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>KBL ExceptionManager Manager Exception lunacek kbl.codes</PackageTags>
+    <PackageReleaseNotes>Init</PackageReleaseNotes>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1-beta3" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.0.0-rtm-rc5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KBL.ExceptionManager.Interfaces\KBL.ExceptionManager.Interfaces.csproj" />
+    <ProjectReference Include="..\KBL.ExceptionManager.Model\KBL.ExceptionManager.Model.csproj" />
+  </ItemGroup>
+
+</Project>

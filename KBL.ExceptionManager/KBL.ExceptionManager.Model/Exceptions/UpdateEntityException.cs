@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KBL.ExceptionManager.Model.Exceptions
 {
-    public class UpdateEntityException<T> : BaseException<T>
+    public class UpdateEntityException<T> : BaseGenericCustomException<T>
     {
         #region Fields
         #endregion
