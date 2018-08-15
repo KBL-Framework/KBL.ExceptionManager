@@ -13,9 +13,9 @@
     <tags>KBL ExceptionManager Manager Exception lunacek kbl.codes</tags>
     <projectUrl>https://github.com/KBL-Framework/KBL.ExceptionManager</projectUrl>
     <dependencies>
-      <dependency id="Newtonsoft.Json" version="11.0.1-beta3" />
-      <dependency id="NLog.Extensions.Logging" version="1.0.0-rtm-rc6" /> 
-      <dependency id="Microsoft.AspNetCore.Http.Abstractions" version="2.0.1" /> 
+      <dependency id="Newtonsoft.Json" version="11.0.2" />
+      <dependency id="NLog.Extensions.Logging" version="1.2.1" /> 
+      <dependency id="Microsoft.AspNetCore.Http.Abstractions" version="2.1.1" /> 
     </dependencies>
   </metadata>
   
