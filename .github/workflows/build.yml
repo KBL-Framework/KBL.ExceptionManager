@@ -29,7 +29,7 @@ jobs:
       - name: Test
         run: dotnet test $PROJECT_NAME -c Release
       - name: Pack
-        run: dotnet pack -v normal -c Release --no-restore -p:PackageVersion=$GITHUB_RUN_ID $PROJECT_NAME/$PROJECT_NAME.csproj
+        run: dotnet pack -v normal -c Release --no-restore -p:PackageVersion=$GITHUB_RUN_ID $PROJECT_NAME/$PROJECT_NAME.Base/$PROJECT_NAME.Base.csproj
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -54,7 +54,7 @@ jobs:
           echo Version: $VERSION
           VERSION="${VERSION//v}"
           echo Clean Version: $VERSION
-          dotnet pack -v normal -c Release -p:PackageVersion=$VERSION -o nupkg $PROJECT_NAME/$PROJECT_NAME.csproj
+          dotnet pack -v normal -c Release -p:PackageVersion=$VERSION -o nupkg $PROJECT_NAME/$PROJECT_NAME.Base/$PROJECT_NAME.Base.csproj
       - name: Push to GitHub Feed
         run: |
           for f in ./nupkg/*.nupkg
