@@ -1,14 +1,10 @@
-﻿using KBL.ExceptionManager.Base.Extensions;
-using KBL.ExceptionManager.Interfaces.Middleware;
+﻿using KBL.ExceptionManager.Interfaces.Middleware;
 using KBL.ExceptionManager.Interfaces.Model;
-using KBL.ExceptionManager.Model.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using NLog;
 using System;
-using System.Collections.Generic;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace KBL.ExceptionManager.Base.Middleware
@@ -33,16 +29,12 @@ namespace KBL.ExceptionManager.Base.Middleware
         #endregion
 
         #region Public methods
-        public async Task Invoke(HttpContext context /* other scoped dependencies */)
+        public async Task Invoke(HttpContext context)
         {
             try
             {
                 await next(context);
-            }            
-            //catch (DifferentClientVersionException ex)
-            //{
-            //    await HandleExceptionAsync(context, ex);
-            //}
+            }
             catch (Exception ex)
             {
                 await HandleExceptionAsync(context, ex);
@@ -68,15 +60,6 @@ namespace KBL.ExceptionManager.Base.Middleware
         #endregion
 
         #region Private methods
-        //private static Task HandleExceptionAsync(HttpContext context, DifferentClientVersionException exception)
-        //{
-        //    _logger.Error(exception, "ExceptionManagerMiddleware catch ");
-        //    var result = JsonConvert.SerializeObject(new { error = exception.UserFriendlyMessage, actualVersion = exception.ActualVersion, downloadUrl = exception.DownloadUrl });
-        //    context.Response.ContentType = "application/json";
-        //    context.Response.StatusCode = (int)exception.HttpStatusCode;
-        //    return context.Response.WriteAsync(result);
-        //}
-
         #endregion
     }
 }

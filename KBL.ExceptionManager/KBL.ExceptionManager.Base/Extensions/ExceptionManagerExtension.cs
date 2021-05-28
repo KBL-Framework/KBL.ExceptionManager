@@ -1,8 +1,6 @@
 ﻿using KBL.ExceptionManager.Base.Middleware;
 using Microsoft.AspNetCore.Builder;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace KBL.ExceptionManager.Base.Extensions
 {
@@ -13,6 +11,7 @@ namespace KBL.ExceptionManager.Base.Extensions
             return builder.UseMiddleware<JsonExceptionManagerMiddleware>();
         }
 
+        [Obsolete("Method1 is deprecated. This method will be removed")]
         public static IApplicationBuilder UseKBLExceptionManagerHtml(this IApplicationBuilder builder)
         {
             return builder.UseMiddleware<HtmlExceptionManagerMiddleware>();
